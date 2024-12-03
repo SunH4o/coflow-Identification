@@ -59,18 +59,18 @@ with open(file_path,'r') as file:
             # print()
 
     # 创建一个DataFrame
-    df = pd.DataFrame(coflow_dataset, columns=['coflow_id', 'arrival_time', 'num_mappers', 'num_reducers', 'received_mb', 'flow_num(i.e. coflow width)','mean_size'])
-
+    df = pd.DataFrame(coflow_dataset, columns=['coflow_id', 'arrival_time', 'num_mappers', 'num_reducers', 'received_MB', 'flow_nums','mean_size(MB)'])
+    df = df.astype(int)
     # 打印DataFrame
     # print(df)
     # 导出DataFrame为CSV文件
-    # df.to_csv('coflow_dataset.csv', index=False)
+    df.to_csv('coflow_dataset.csv', index=False)
 
-    # 从526条数据中随机抽取100条
+    # 从526条数据中随机抽取10条
     df_demo = df.sample(n=10, random_state=1)
 
     # 打印DataFrame
-    print(df_demo)
+    # print(df_demo)
 
     # 导出DataFrame为CSV文件
     df_demo.to_csv('coflow_dataset_demo.csv', index=False)
