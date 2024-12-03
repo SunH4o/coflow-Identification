@@ -7,7 +7,7 @@ coflow_dataset = []
 current_file_dir = os.getcwd()
 file_name = "FB2010-1Hr-150-0.txt"
 
-file_path = os.path.join(current_file_dir+"\\coflowbenchmark",file_name)
+file_path = os.path.join(current_file_dir+"\\coflow-identification\\coflowbenchmark",file_name)
 
 with open(file_path,'r') as file:
     #coflowTrace = file.read() #整个文件
@@ -67,10 +67,10 @@ with open(file_path,'r') as file:
     # df.to_csv('coflow_dataset.csv', index=False)
 
     # 从526条数据中随机抽取100条
-    df_sample = df.sample(n=100, random_state=1)
+    df_demo = df.sample(n=10, random_state=1)
 
     # 打印DataFrame
-    print(df_sample)
+    print(df_demo)
 
     # 导出DataFrame为CSV文件
-    df_sample.to_csv('coflow_dataset_sample.csv', index=False)
+    df_demo.to_csv('coflow_dataset_demo.csv', index=False)
