@@ -74,7 +74,7 @@ for index, row in df.iterrows():
 
     
     
-# 如果需要将 flows_dataset 转换为 DataFrame 并保存到文件
+# 将 flows_dataset 转换为 DataFrame 并保存
 flows_df = pd.DataFrame(flows_dataset)
 flows_df.to_csv(current_file_dir+'\\coflow-identification\\flows_dataset_new_2.csv', index=False)
     
