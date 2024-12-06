@@ -5,9 +5,10 @@ import os
 MEGABYTE = 1024 * 1024
 
 current_file_dir = os.getcwd()
+print(current_file_dir)
 
 # 读取 coflow_dataset_demo 
-df = pd.read_csv(current_file_dir+'\\coflow-identification\\coflow_dataset_demo.csv')
+df = pd.read_csv(current_file_dir+'/coflow_dataset_demo_continue.csv')
 
 
 flows_dataset = []
@@ -63,11 +64,11 @@ for index, row in df.iterrows():
         flows_dataset.append({
             'start_time': start_time,
             'flow_size': packet_sizes.sum(), # 该条flow的总字节数
+            'mean_packet_size_32': mean_packet_size_32,
             'mean_packet_size_20': mean_packet_size_20,
             'mean_packet_size_16': mean_packet_size_16,
             'mean_packet_size_8': mean_packet_size_8,
             'mean_packet_size_4': mean_packet_size_4,
-            'mean_packet_size_32': mean_packet_size_32,
             'coflow_id': coflow_id
         })
     
@@ -76,7 +77,7 @@ for index, row in df.iterrows():
     
 # 将 flows_dataset 转换为 DataFrame 并保存
 flows_df = pd.DataFrame(flows_dataset)
-flows_df.to_csv(current_file_dir+'\\coflow-identification\\flows_dataset_new_2.csv', index=False)
+flows_df.to_csv(current_file_dir+'/lows_dataset_continue_10.csv', index=False)
     
 
 
