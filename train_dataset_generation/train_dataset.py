@@ -6,9 +6,10 @@ MEGABYTE = 1024 * 1024
 
 current_file_dir = os.getcwd()
 # print(current_file_dir)
+FILE_PATH = current_file_dir + '/coflow_dataset_demo_continue.csv'
 
 # 读取 coflow_dataset_demo 
-df = pd.read_csv(current_file_dir+'\\coflow-identification\\flows_dataset_new.csv',
+df = pd.read_csv(FILE_PATH,
                   usecols=['coflow_id', 'start_time', 'mean_packet_size_20'])
 
 df.astype(float)
@@ -27,4 +28,4 @@ for i in range(len(df)):
 
 # 将新数据集转换为 DataFrame
 new_df = pd.DataFrame(train_dataset, columns=['feature1', 'feature2', 'label'])
-new_df.to_csv(current_file_dir+'\\coflow-identification\\new_dataset.csv', index=False)
+new_df.to_csv(current_file_dir+'/train_dataset_generation/train_dataset_continue.csv', index=False)

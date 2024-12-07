@@ -57,12 +57,13 @@ for index, row in df.iterrows():
         mean_packet_size_32 = np.mean(packet_sizes[:32]) # 前32个分组的平均大小
         mean_packet_size_20 = np.mean(packet_sizes[:20]) # 前20个分组的平均大小
         mean_packet_size_16 = np.mean(packet_sizes[:16]) # 前16个分组的平均大小
-        mean_packet_size_8 = np.mean(packet_sizes[:8]) 
-        mean_packet_size_4 = np.mean(packet_sizes[:4])
+        mean_packet_size_8 = np.mean(packet_sizes[:8])   # 前8个分组的平均大小   
+        mean_packet_size_4 = np.mean(packet_sizes[:4])   # 前4个分组的平均大小 
         
         
         flows_dataset.append({
-            'start_time': start_time,
+            'start_time': start_time,        # 该条flow的总分组数
+            'flow_packet_num':packet_num,
             'flow_size': packet_sizes.sum(), # 该条flow的总字节数
             'mean_packet_size_32': mean_packet_size_32,
             'mean_packet_size_20': mean_packet_size_20,
@@ -77,7 +78,7 @@ for index, row in df.iterrows():
     
 # 将 flows_dataset 转换为 DataFrame 并保存
 flows_df = pd.DataFrame(flows_dataset)
-flows_df.to_csv(current_file_dir+'/lows_dataset_continue_10.csv', index=False)
+flows_df.to_csv(current_file_dir+'/flows_dataset_continue_10.csv', index=False)
     
 
 
