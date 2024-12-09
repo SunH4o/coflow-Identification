@@ -1,0 +1,6 @@
+coflow_id,arrival_time,num_mappers,num_reducers,received_MB,flow_nums,mean_size(MB)
+1,0,1,1,1,1,1
+2,10833,2,1,48,2,24
+3,13122,2,1,4,2,2
+4,15531,27,116,83565,3132,26
+5,22263,1,51,64,51,1

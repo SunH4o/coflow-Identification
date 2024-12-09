@@ -8,7 +8,10 @@ print(current_file_dir)
 df = pd.read_csv(current_file_dir + '/coflow_dataset.csv')
 
 # 前十个连续的coflow
-df_demo_continue = df.head(10)
-df_demo_continue.to_csv('coflow_dataset_demo_continue.csv', index=False)
+# df_demo_continue = df.head(10)
+
+# 前五个连续的coflow
+df_demo_continue = df.head(5)
+df_demo_continue.to_csv('coflow_dataset_demo_continue_5.csv', index=False)
 
 
